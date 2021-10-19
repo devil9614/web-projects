@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap');
+*{
+    margin : 0;
+    padding : 0;
+}
+.openingBox{
+    padding:0;
+    margin:0;
+    background-color:#EE1B24;
+    height:100vh;
+    width:100vw;
+}
+.navtop{
+    padding-top: 2%;
+    font-size: 105%;
+}
+.navtop a{
+    text-decoration: none;
+    color:white;
+}
+#logo{
+    padding-left: 8%;
+    font-size:500%;
+    color:black;
+}
+#logo #confession{
+    color:white;
+    font-family: 'Satisfy', sans-serif;
+}
+.navtop{
+    display:flex;
+    justify-content:flex-end;
+}
+.confessBtn{
+    position:absolute;
+    left:40%;
+    top:80%;
+    padding-right: 3vw;
+    padding-left: 3vw;
+    font-size: 150%;
+    border-radius: 30px;
+}
+.sins{
+    position:absolute;
+    left:65%;
+    font-family: 'Crimson Text', serif;
+    font-size:350%;
+    color:white;
+}
+.reason{
+    padding-top: 7vw;
+    width:100vw;
+    height:100vh;
+}
+.reason h2{
+    font-family: 'Satisfy', sans-serif;
+    font-size:250%;
+    padding-bottom: 2vw;
+}
+.reason p{
+    font-family: 'Crimson Text', serif;
+    font-size:150%
+}
+.reason .motive li{
+    font-family: 'Crimson Text', serif;
+    font-size : 150%;
+}
+.motive{
+    padding-top: 4vw;
+}
+.chats{
+    background-color:#EE1B24;
+    height:100vh;
+    width:100vw;
+}
+.chats .container{
+    padding-top: 7vw;
+}
+.chats .row{
+    padding-bottom: 2vw;
+}
+.borderChats{
+    border : 1px solid white;
+    border-radius:10px;
+}
+.borderChats p{
+    color:white;
+}
+.borderChats blockquote{
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}
+.blockquote-footer{
+    color:powderblue
+}
+.seeMore{
+    display:flex;
+    justify-content: end;
+    color:powderblue;   
+}

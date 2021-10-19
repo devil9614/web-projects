@@ -1,0 +1,13 @@
+*{
+  margin:0;
+}
+@font-face{
+  font-family:'iCielMedium';
+  src: local('iCielMedium'),url('./fonts/iCiel-Medium.ttf'), format('truetype');
+  font-weight: normal;
+}
+body{
+  font-family:'iCielMedium';
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}

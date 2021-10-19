@@ -1,0 +1,38 @@
+.header_file {
+  margin-top: 15px;
+  /* margin-right:15px; */
+  background-color:transparent;
+  background: none;
+  width :100vw;
+  display : flex;
+  position:fixed;
+  top:0;
+  margin:15px;
+  margin-top:10px;
+  z-index:100;
+}
+.header_logo{
+    height:24px;
+    width:100px;
+    margin-top:7px;
+}
+.header_center{
+    display:flex;
+    flex : 1;
+    justify-content : center;
+    /* padding-left:10px; */
+    
+}
+.header_center p{
+    margin:10px;
+    text-transform: uppercase;
+}
+.header_end{
+    display:flex;
+    justify-content : flex-end;
+}
+.header_end p{
+    margin:10px;
+    text-transform: uppercase;
+}
+

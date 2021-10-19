@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GiantStudy</title>
+    <link rel="stylesheet" href = "css/index.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="#">GiantStudy</a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cart</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <a
+                  class="btn btn-sm dropdown-toggle"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                 >
+                  Courses
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">C++ Guru</a></li>
+                  <li><a class="dropdown-item" href="#">Python Mastery</a></li>
+                  <li><a class="dropdown-item" href="#">Java God</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">JavaScript Basic</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Front-End King</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-danger me-2" type="submit" >Search</button>
+          </form>
+          <div class = "d-flex">
+            <button type="button" class="btn btn-outline-info" >Log in</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+      <strong>Winter Offer</strong> all Courses prices have dropped by 50%
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide mx-auto w-75"
+      data-bs-ride="carousel"
+    >
+      <ol class="carousel-indicators">
+        <li
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+        ></li>
+        <li
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+        ></li>
+        <li
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+        ></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          <img
+            src="resources/Problem needs solving (1).png"
+            class="d-block w-100 c-image"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="resources/Problem needs solving (2).png"
+            class="d-block w-100 c-image"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item active">
+          <img
+            src="resources/Problem needs solving .png"
+            class="d-block w-100 c-image"
+            alt="..."
+          />
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+    <div class="introduction-part">
+      <h1>Why GiantStudy?</h1>
+      <p>
+        GiantStudy has made its mark as one of the best institute for learning
+        programming and bagging a job, with fully remotely moving towards a
+        digital movement. Courses are tought by the mostly experienced industry
+        specialist, who have been in the industry for more than a decade. All
+        the courses have dedecated project from the current industry point of
+        view. Trusted by more than 1000 students and are the resaon of major
+        amount of industry placement.
+      </p>
+      <button type="button" class="btn btn-outline-primary">Register Today</button>
+    </div>
+    <hr>
+    <div class = "all-cards container" >
+      <div class="card mb-3 h-100" style="max-width: 40%">
+        <div class="row">
+          <div class="col-12 col-md-5">
+            <img src="resources/c++ buy now.jpg" alt="C++ Guru" style = "height:100%; width:100%;">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title">C++ Guru</h5>
+              <p class="card-text">The Best and the most sold course for profitable and professional requirements. Its the best course for Student.</p>
+              <p class="card-text"><button type="button" class="btn btn-outline-success">Buy Now</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
