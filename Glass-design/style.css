@@ -1,0 +1,158 @@
+*{
+    margin:0;
+}
+body{
+    background-image: linear-gradient(45deg,#4CA1AF,  #C4E0E5);
+    background-size: cover;
+    height: 100vh;
+    width:100vw;
+}
+}
+.main{
+    height: 100vh;
+    width:100vw;
+}
+.ball1{
+    background-image: linear-gradient(45deg,#0F2027,#203A43,#2C5364);
+    height: 150px;
+    width:150px;
+    border-radius:50%;
+    position:absolute;
+    top:65%;
+    left:75%;
+    opacity:0.75;
+}
+.ball2{
+    background-image: linear-gradient(45deg,#0F2027,#203A43,#2C5364);
+    height: 250px;
+    width:250px;
+    border-radius:50%;
+    position:absolute;
+    top:10%;
+    left: 8%;
+    opacity:0.75;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    padding:15px;
+    font-size:x-large;
+    color:#fff;
+    text-shadow: 0 0 3px #000000, 0 0 5px #000000;
+}
+.details{
+    padding:15px;
+    font-size:large;
+}
+.details a{
+    text-decoration:none;
+    color: #fff;
+    text-shadow: 0 0 3px #000, 0 0 5px #000;
+}
+.glass{
+    background-color:white;
+    height:60vh;
+    width:60%;
+    position: absolute;
+    top:20%;
+    left:20%;
+    z-index:2;
+    background:linear-gradient(45deg,rgba(255,255,255,0.7),rgba(255,255,255,0.2));
+    backdrop-filter: blur(1rem);
+    border-radius: 1.1rem;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.card-container {
+    cursor: pointer;
+    height: 60%;
+    perspective: 600;
+    position: relative;
+    width: 50%;
+  }
+  .card {
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    width: 100%;
+    border-radius: 30px;
+  }
+  .card:hover {
+    transform: rotateY(180deg);
+  }
+  .card .side {
+    backface-visibility: hidden;
+    background: #aa4b6b;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+  }
+  .card .back {
+    background:linear-gradient(45deg,rgba(255,255,255,0.7),rgba(255,255,255,0.2));
+    color: #0087cc;
+    transform: rotateY(180deg);
+  }
+  .logo,.chip,.number,.name,.from,.to{
+      position: absolute;
+  }
+  .logo img {
+    top: 35px;
+    right: 40px;
+    width: 80px;
+    height: auto;
+    opacity: 0.8;
+  }
+  .chip img {
+    top: 120px;
+    left: 40px;
+    width: 50px;
+    height: auto;
+    opacity: 0.8;
+  }
+  .logo{
+      right:2%;
+  }
+  .chip{
+      top:40%;
+      left:10%
+  }
+  .name {
+      color:white;
+      top:85%;
+      left:10%;
+      font-size:15px;
+      font-family: "Josefin Sans", sans-serif;
+  }
+  .number{
+      top:65%;
+      left:10%;
+      color:white;
+      font-family: "Nunito", sans-serif;
+      font-size:28px;
+      font-weight: 100;
+  }
+  .from,.to{
+      top:85%;
+      color:white;
+      font-size:15px;
+      font-family: "Nunito", sans-serif;
+
+  }
+  .from{
+      left:70%;
+
+  }
+  .to{
+      left:85%;
+  }
+  
+  
