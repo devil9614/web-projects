@@ -1,0 +1,91 @@
+body {
+    background-color: #BEEC7a;
+    width: 100%;
+}
+
+#welcomeText {
+    /* align-items: center; */
+    text-align: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px 0px 20px 0px;
+    background: #A87AEC;
+    border-radius: 5px;
+    /* text-shadow: 5px; */
+    margin: auto;
+    width: 500px;
+    position: relative;
+    left: 32%;
+}
+
+#createYourOwn {
+    /* text-align: center; */
+    font-size: smaller;
+    font-family: monospace;
+    text-align: center;
+    /* margin: auto; */
+    /* margin-left: 20px; */
+}
+
+.formBackground {
+    background: #ffffff;
+    text-align: center;
+    margin: auto;
+    width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.formClass {
+    font-size: 20px;
+}
+
+input[type=text],
+input[type=date],
+select {
+    width: 300px;
+    border: 1px solid #ccc;
+    height: 30px;
+    border-radius: 4px;
+}
+
+.okk {
+    display: inline-block;
+}
+
+#info {
+    font-size: 16px;
+    opacity: 0.5;
+}
+
+#submitbutton {
+    width: 300px;
+    border: 1px solid #ccc;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#createNew {
+    font-size: 50px;
+    color: white;
+    position: fixed;
+    background-color: transparent;
+    border: 0;
+    right: 0;
+    top: 0;
+    text-decoration: none;
+}
+
+.ok23 {
+    display: inline-block;
+}
+
+#createNew:hover {
+    transform: rotate(45deg);
+}
+
+#submitbutton:hover {
+    transform: scale(1.2);
+}
