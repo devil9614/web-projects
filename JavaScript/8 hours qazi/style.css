@@ -1,0 +1,38 @@
+.container{
+    /* align-items: center; */
+    padding: 20px;
+}
+.challenge1,.challenge2,.challenge3{
+    border: 1px solid;
+    display:flex;
+    flex-direction: column;
+}
+.heading{
+    text-align: center;
+}
+.buttons > button{
+    margin: 20px;
+}
+#d{
+    justify-content: center;
+    text-align: center;
+    
+}
+#d h2{
+    padding: 5px;
+    border : 1px solid;
+}
+#results{
+    text-align: center;
+}
+#catres,.buttons2,.buttons{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+#catres,.buttons2 > *{
+    flex: 1 1 160px;
+}
+.catbtn,.buttons2>button{
+    margin:10px;
+}
