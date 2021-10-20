@@ -1,14 +1,35 @@
-import { Avatar } from '@mui/material'
+import { Avatar, Button } from '@mui/material'
 import React from 'react'
 import './Navbar.css'
 import styled from 'styled-components'
+import { signOut } from 'firebase/auth'
+import { auth } from '../../Firebase'
+import { useHistory } from 'react-router-dom'
+import { useAuthState } from 'react-firebase-hooks/auth'
 const Navbar = () => {
+  const history = useHistory()
+  const handleSignOut = async () => {
+    await signOut(auth).then(() => {
+      history.replace('/login')
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+  const [user,loading,error] = useAuthState(auth)
+  const handleRedirect = () => {
+    history.replace('/login')
+  }
+  if(user){console.log(user.providerData[0].email)}
   return (
     <NavContainer className = "main-cntainer">
       <Logo>TypeEnma</Logo>
       <UserDetails>
-      <Avatar>s</Avatar>
-      <p style = {{paddingLeft:"10px"}}>Sujan</p>
+        {
+          user?<><Avatar>{user.providerData[0].email[0]}</Avatar>
+      <p style = {{paddingLeft:"10px",paddingRight:"10px"}}>{user.providerData[0].email}</p>
+      <Button variant = "contained" onClick = {handleSignOut}>Logout</Button></>:<Button variant = "contained" onClick = {handleRedirect}>Login</Button>
+        }
+      
       </UserDetails>
     </NavContainer>
   )
