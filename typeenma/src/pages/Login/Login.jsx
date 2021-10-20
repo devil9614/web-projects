@@ -1,17 +1,30 @@
-import React, { useState } from 'react'
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, signInWithEmailAndPassword, signInWithGoogle } from '../../Firebase'
-import { useAuthState } from "react-firebase-hooks/auth";
+import React, { useEffect, useState } from 'react'
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import {auth} from '../../Firebase'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useHistory } from 'react-router-dom';
 const Login = () => {
+    const history = useHistory()
     const [email,setEmail] = useState()
     const [password,setPassWord] = useState()
-    const [error,setError] = useState()
-    const handleSubmit = () => {
-        signInWithEmailAndPassword(email,password)
+    const [user,loading,error] = useAuthState(auth)
+    useEffect(() => {
+        if(loading){
+            return 
+        }
+        if(user){
+            history.replace("/")
+        }
+    },[loading,user])
+    const handleSubmit = async () => {
+        try{
+            const user = await signInWithEmailAndPassword(auth,email,password)
+            console.log(user)
+        } catch(err){
+            console.log(err.message)
+        }
+        
     }
-
-    
-
     return (
         <div>
             <input type = "text" placeholder = "email" onChange = {(e) => {
