@@ -5,6 +5,7 @@ import CircularClock from "../../Components/CircularClock";
 import Navbar from '../../Components/Navabar/Navbar'
 import TextSection from '../../Components/TextSection';
 import { makeStyles } from "@material-ui/core/styles";
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   
 const useStyles = makeStyles(() => ({
   noBorder: {
@@ -15,76 +16,37 @@ const useStyles = makeStyles(() => ({
 const Home = () => {
     const [start,setStart] = useState(false)
     const [count,setCount] = useState(0)
-    const [right,setRight] = useState(false)
-    const [tryy,setTryy] = useState("")
+    const [right,setRight] = useState(0)
+    const [re,setRe] = useState(false)
     const [text,setText] = useState("")
-    const classes = useStyles();
-    const myRef = useRef(null)
-    const UseKey = (key,cb) => {
-        const callbackRef = useRef(cb)
-        useEffect(() => {
-            callbackRef.current = cb
-        })
-        useEffect(() => {
-            const handle = (event) => {
-                setTryy(tryy+event.key)
-                console.log(event.key)
-                if (event.key === key){
-                    callbackRef.current(event)
-                    setCount(count+1)
-                    setRight(true)
-                    console.log(true)
-                }
-                else{
-                    console.log(false)
-                    setRight(false)
-                    if (key === "Backspace"){
-                        setCount(count-1)
-                    }
-                    else{
-                        setCount(count+1)
-                    }
-                }
-            }
-            document.addEventListener("keypress",handle)
-        },[key])
-        
-    }
     const handleClick = (e) => {
         setStart(true)
+        setTimeout(() => setRe(true),30000)
         setText(e.target.value)
-        scrollToRef(myRef)
     }
-    const handleEnter = () => {
-        console.log(tryy,"Total Thing")
-    }
-    useEffect(() => {
-        console.log(tryy)
-    },[tryy])
+    
     const sampleText = `This will be the sample textSet the color of the text-decoration to redSet the color of the text-decoration to red
                         Set the color of the Set the color of the text-decoration to redSet the color of the texSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redt-decoration to redSet the color of the text-decoration to redtext-decoration to redSet the color of the text-decoration to red`
     const Array = sampleText.split("");
     console.log(Array)
-    UseKey("T",handleEnter)
     console.log(text)
+    
     return (
         <HomeContainer>
+            {re?<Redirect to = {{pathname:"/dashboard",state:{text:String(text),Array:Array},}} />:null}
             <Navbar/>
             <ClockPosition><CircularClock start = {start}/></ClockPosition>
             <TextPosition style = {{maxHeight:"30vh"}}>
                 <TotalSection>
-                    {Array.map((letter,index) => <EachLetter ref = {myRef} 
+                    {Array.map((letter,index) => (<EachLetter 
                     style = 
                     {index+1 > text.length?{color:"grey"}:text[index] === letter?{color:"green"}:{color:"red",textDecoration:"underline",textDecorationColor:"red"}} 
-                    key = {index}>{letter}</EachLetter>)}
+                    key = {index}>{letter}</EachLetter>))}
                 </TotalSection>
             </TextPosition>
             <TextField
-                autoFocus
-                classes={{notchedOutline:classes.input}}
                 onChange = {(e) => handleClick(e)} 
-                style = {{outline:"none",paddingTop:"20px"}}>
-
+                style = {{outline:"none",paddingTop:"20px",maxWidth:"80vw"}}>
                 </TextField>
         </HomeContainer>
     )
@@ -97,6 +59,7 @@ const HomeContainer = styled.div`
     background-image: linear-gradient(to top,lightgreen,white);
     display:flex;
     flex-direction:column;
+    align-items:center;
 `
 const ClockPosition = styled.div`
     margin-top:10vh;
@@ -113,7 +76,7 @@ const TextPosition = styled.div`
 const EachLetter = styled.div`
     font-size:1.5rem;
     display:flex;
-    width:1.2rem;
+    width:1.1rem;
     color:grey;
 `
 const TotalSection = styled.div`

@@ -15,7 +15,7 @@ const CircularClock = ({start}) => {
   return (
       <>
     <ClockContainer>
-      <CircularProgressbarWithChildren value = {seconds} maxValue = {maxSeconds} strokeWidth = "10">
+      <CircularProgressbarWithChildren value = {seconds} maxValue = {maxSeconds} strokeWidth = "10" onExpiry>
         <SecondText>{seconds}</SecondText>
       </CircularProgressbarWithChildren>
     </ClockContainer>
