@@ -1,16 +1,25 @@
-import { Button, Input } from '@mui/material';
+import { Button, Input, TextField } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import CircularClock from "../../Components/CircularClock";
 import Navbar from '../../Components/Navabar/Navbar'
 import TextSection from '../../Components/TextSection';
-
+import { makeStyles } from "@material-ui/core/styles";
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   
+const useStyles = makeStyles(() => ({
+  noBorder: {
+    border: "none",
+  },
+}));
 
 const Home = () => {
     const [start,setStart] = useState(false)
     const [count,setCount] = useState(0)
     const [right,setRight] = useState(false)
     const [tryy,setTryy] = useState("")
+    const [text,setText] = useState("")
+    const classes = useStyles();
+    const myRef = useRef(null)
     const UseKey = (key,cb) => {
         const callbackRef = useRef(cb)
         useEffect(() => {
@@ -41,8 +50,10 @@ const Home = () => {
         },[key])
         
     }
-    const handleClick = () => {
+    const handleClick = (e) => {
         setStart(true)
+        setText(e.target.value)
+        scrollToRef(myRef)
     }
     const handleEnter = () => {
         console.log(tryy,"Total Thing")
@@ -50,14 +61,31 @@ const Home = () => {
     useEffect(() => {
         console.log(tryy)
     },[tryy])
-    const Array = [ "T", "h", "i", "s", " ", "w", "i", "l", "l"]
+    const sampleText = `This will be the sample textSet the color of the text-decoration to redSet the color of the text-decoration to red
+                        Set the color of the Set the color of the text-decoration to redSet the color of the texSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redt-decoration to redSet the color of the text-decoration to redtext-decoration to redSet the color of the text-decoration to red`
+    const Array = sampleText.split("");
+    console.log(Array)
     UseKey("T",handleEnter)
+    console.log(text)
     return (
         <HomeContainer>
             <Navbar/>
             <ClockPosition><CircularClock start = {start}/></ClockPosition>
-            <TextPosition><TextSection/></TextPosition>
-            <Button onClick = {handleClick}>Start</Button>
+            <TextPosition style = {{maxHeight:"30vh"}}>
+                <TotalSection>
+                    {Array.map((letter,index) => <EachLetter ref = {myRef} 
+                    style = 
+                    {index+1 > text.length?{color:"grey"}:text[index] === letter?{color:"green"}:{color:"red",textDecoration:"underline",textDecorationColor:"red"}} 
+                    key = {index}>{letter}</EachLetter>)}
+                </TotalSection>
+            </TextPosition>
+            <TextField
+                autoFocus
+                classes={{notchedOutline:classes.input}}
+                onChange = {(e) => handleClick(e)} 
+                style = {{outline:"none",paddingTop:"20px"}}>
+
+                </TextField>
         </HomeContainer>
     )
 }
@@ -77,5 +105,21 @@ const ClockPosition = styled.div`
 const TextPosition = styled.div`
     margin-top:3vh;
     margin-left:10vw;
+    overflow-y:scroll;
+    max-height:30vh
+    max-width:80vw;
+    margin-right:10vw;
 `
+const EachLetter = styled.div`
+    font-size:1.5rem;
+    display:flex;
+    width:1.2rem;
+    color:grey;
+`
+const TotalSection = styled.div`
+    display:flex;
+    flex-wrap:wrap
+`
+
+
 export default Home
