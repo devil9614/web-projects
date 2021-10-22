@@ -12,8 +12,21 @@ const useStyles = makeStyles(() => ({
     border: "none",
   },
 }));
-
+function App() {
+    const makeAPICall = async () => {
+      try {
+        const response = await fetch('https://corporatelorem.kovah.de/api/2', {mode:'cors'});
+        const data = await response.json();
+        console.log({ data })
+      }
+      catch (e) {
+        console.log(e)
+      }
+    }
+    makeAPICall()
+}
 const Home = () => {
+    App()
     const [start,setStart] = useState(false)
     const [count,setCount] = useState(0)
     const [right,setRight] = useState(0)
@@ -24,7 +37,11 @@ const Home = () => {
         setTimeout(() => setRe(true),30000)
         setText(e.target.value)
     }
-    
+    // fetch("",{
+    //     methord:"GET",
+    //     mode:'cors',
+    //     headers:{}
+    // }).then(res => {console.log(res)}).catch(err => {console.log(err)})
     const sampleText = `This will be the sample textSet the color of the text-decoration to redSet the color of the text-decoration to red
                         Set the color of the Set the color of the text-decoration to redSet the color of the texSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redt-decoration to redSet the color of the text-decoration to redtext-decoration to redSet the color of the text-decoration to red`
     const Array = sampleText.split("");

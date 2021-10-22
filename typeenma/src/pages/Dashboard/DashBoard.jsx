@@ -1,20 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 const DashBoard = (props) => {
     const [count,setCount] = useState(0)
     const [right,setRight] = useState(0)
-    console.log(props.location.state.text[0])
-    setCount(props.location.state.text.length)
-    if(props.location.state.text && props.location.state.Array){for(let i = 0 ;i < props.location.state.text.length;i++){
-        console.log(i)
+    let r = 0
+    useEffect(() => {
+        setCount(props.location.state.text.length)
+        if(props.location.state.text && props.location.state.Array){for(let i = 0 ;i < props.location.state.text.length;i++){
         if(props.location.state.text[i] === props.location.state.Array[i]){
-            setRight(right+1)
+            r= r+1
+            setRight(r)
         }
-    }}
-    console.log(right,count)
-    const wpm = 12
-    const accuracy = 80
+        
+    }
+        
+}
+    },[])
     
+    
+    const wpm = (right/2.5)
+    const accuracy = ((right)/count)*100
     return (
         <>
         <DashBox>
