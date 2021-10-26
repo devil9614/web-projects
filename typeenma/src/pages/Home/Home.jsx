@@ -6,27 +6,16 @@ import Navbar from '../../Components/Navabar/Navbar'
 import TextSection from '../../Components/TextSection';
 import { makeStyles } from "@material-ui/core/styles";
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import data from '../../data.json'
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   
 const useStyles = makeStyles(() => ({
   noBorder: {
     border: "none",
   },
 }));
-function App() {
-    const makeAPICall = async () => {
-      try {
-        const response = await fetch('https://corporatelorem.kovah.de/api/2', {mode:'cors'});
-        const data = await response.json();
-        console.log({ data })
-      }
-      catch (e) {
-        console.log(e)
-      }
-    }
-    makeAPICall()
-}
+
+
 const Home = () => {
-    App()
     const [start,setStart] = useState(false)
     const [count,setCount] = useState(0)
     const [right,setRight] = useState(0)
@@ -37,11 +26,7 @@ const Home = () => {
         setTimeout(() => setRe(true),30000)
         setText(e.target.value)
     }
-    // fetch("",{
-    //     methord:"GET",
-    //     mode:'cors',
-    //     headers:{}
-    // }).then(res => {console.log(res)}).catch(err => {console.log(err)})
+    console.log(data)
     const sampleText = `This will be the sample textSet the color of the text-decoration to redSet the color of the text-decoration to red
                         Set the color of the Set the color of the text-decoration to redSet the color of the texSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redSet the color of the text-decoration to redt-decoration to redSet the color of the text-decoration to redtext-decoration to redSet the color of the text-decoration to red`
     const Array = sampleText.split("");
@@ -63,7 +48,7 @@ const Home = () => {
             </TextPosition>
             <TextField
                 onChange = {(e) => handleClick(e)} 
-                style = {{outline:"none",paddingTop:"20px",maxWidth:"80vw"}}>
+                style = {{outline:"none",paddingTop:"20px",maxWidth:"80vw",width:"60vw"}}>
                 </TextField>
         </HomeContainer>
     )
